@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    background-color: #111;
+}
+
+.parent {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    
+    /* Flex ki jagah CSS Grid use karein */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Screen width ke hisab se cards adjust honge */
+    gap: 20px;
+    align-content: flex-start;
+}
+
+.card {
+    width: 100%; /* Fixed width 200px ki jagah 100% karein taaki grid control kare */
+    min-height: 220px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.top img {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid #dadada;
+    padding: 4px;
+}
+
+.top button {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    border: 1px solid #dadada;
+    padding: 5px 8px;
+    font-size: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #8b8b8b;
+    white-space: nowrap;
+}
+
+.center h2 {
+    font-size: 20px;
+    color: #111;
+    overflow-wrap: anywhere;
+}
+
+.center h3 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #111;
+}
+
+.center h3 span {
+    font-size: 10px;
+    font-weight: 400;
+    color: #8b8b8b;
+}
+
+.center .tag {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+.center .tag h4 {
+    font-size: 12px;
+    background-color: #dadada;
+    color: #111;
+    padding: 4px 6px;
+    font-weight: 400;
+    border-radius: 4px;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-top: 1px solid #b1b1b1;
+    padding-top: 12px;
+    margin-top: 15px;
+}
+
+.bottom button {
+    background-color: black;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: none;
+    white-space: nowrap;
+}
+
+.bottom h3 {
+    font-size: 17px;
+    color: #111;
+}
+
+.bottom p {
+    font-size: 12px;
+    color: #8b8b8b;
+}
+
+/* Mobile Devices ke liye extra padding adjust karne ke liye */
+@media (max-width: 480px) {
+    .parent {
+        padding: 10px;
+        gap: 12px;
+    }
+}
